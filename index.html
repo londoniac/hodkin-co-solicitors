@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hodkin & Co Solicitors — Felbridge, East Grinstead</title>
+  <meta name="description" content="Hodkin & Co Solicitors and Notary Public. Conveyancing, wills, family law, litigation, and more. Free parking. Felbridge, near East Grinstead.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --slate: #2C4A7C;
+      --slate-deep: #1B3460;
+      --slate-light: #3D6BA8;
+      --gold: #B8965A;
+      --gold-light: #D4B37C;
+      --ivory: #FAFBFD;
+      --parchment: #F5F3EF;
+      --text: #1E293B;
+      --text-light: #64748B;
+      --white: #FFFFFF;
+      --border: #E2E8F0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+    .banner { background: var(--slate-deep); color: var(--gold-light); text-align: center; padding: 0.6rem 1rem; font-size: 0.82rem; font-weight: 500; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.15rem; color: var(--slate-deep); text-decoration: none; }
+    .nav-brand span { color: var(--gold); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--slate); }
+    .nav-cta { background: var(--slate); color: white !important; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600 !important; transition: all 0.3s; }
+    .nav-cta:hover { background: var(--slate-deep) !important; }
+
+    /* Hero */
+    .hero {
+      position: relative; background: var(--slate-deep); padding: 6rem 2rem 7rem;
+      text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(184, 150, 90, 0.06) 0%, transparent 50%),
+        linear-gradient(225deg, rgba(44, 74, 124, 0.3) 0%, transparent 50%);
+    }
+    .hero-lines {
+      position: absolute; inset: 0; opacity: 0.03;
+      background-image: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 1px, transparent 1px, transparent 80px);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-sra {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(184, 150, 90, 0.12); border: 1px solid rgba(184, 150, 90, 0.2);
+      padding: 0.45rem 1.1rem; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 500; color: var(--gold-light);
+      margin-bottom: 2rem; letter-spacing: 0.03em;
+    }
+    .hero h1 {
+      font-family: 'Libre Baskerville', serif; font-weight: 700;
+      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+      color: var(--white); line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-light); font-weight: 400; }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.55);
+      max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.85rem 1.75rem; border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; transition: all 0.3s; border: none; cursor: pointer;
+    }
+    .btn-gold { background: var(--gold); color: var(--slate-deep); }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(184, 150, 90, 0.25); }
+    .btn-outline { background: transparent; color: rgba(255,255,255,0.7); border: 1.5px solid rgba(255,255,255,0.15); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-trust {
+      margin-top: 2.5rem; font-size: 0.82rem; color: rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .hero-trust span { display: flex; align-items: center; gap: 0.35rem; }
+
+    /* Services */
+    .services { padding: 5rem 2rem; background: var(--ivory); }
+    .services .container { max-width: 1000px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 3rem; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 600; color: var(--gold);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Libre Baskerville', serif; font-weight: 700;
+      font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--slate-deep); line-height: 1.25;
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;
+    }
+    .service-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.75rem; transition: all 0.3s;
+      position: relative;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(0,0,0,0.06); border-color: var(--gold); }
+    .service-card-icon {
+      width: 44px; height: 44px; background: var(--ivory);
+      border: 1px solid var(--border); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-family: 'Libre Baskerville', serif; font-weight: 700;
+      font-size: 1rem; color: var(--slate-deep); margin-bottom: 0.5rem;
+    }
+    .service-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+
+    /* About */
+    .about { padding: 5rem 2rem; background: var(--white); }
+    .about .container { max-width: 800px; margin: 0 auto; text-align: center; }
+    .about p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+    .about-features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .about-feature {
+      padding: 1.5rem; background: var(--ivory); border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .about-feature h4 {
+      font-family: 'Libre Baskerville', serif; font-size: 0.95rem;
+      color: var(--slate-deep); margin-bottom: 0.3rem;
+    }
+    .about-feature p { font-size: 0.82rem; margin-bottom: 0; }
+
+    /* Contact */
+    .contact { padding: 5rem 2rem; background: var(--parchment); }
+    .contact .container { max-width: 1000px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; }
+    .contact-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.5rem;
+    }
+    .contact-item { margin-bottom: 1.75rem; }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-item h3 {
+      font-family: 'Libre Baskerville', serif; font-size: 0.95rem;
+      color: var(--slate-deep); margin-bottom: 0.35rem;
+    }
+    .contact-item p, .contact-item a {
+      font-size: 0.95rem; color: var(--text-light); text-decoration: none; line-height: 1.6;
+    }
+    .contact-item a:hover { color: var(--slate); }
+    .contact-map {
+      border-radius: 16px; overflow: hidden; border: 1px solid var(--border); min-height: 320px;
+    }
+    .contact-map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; }
+
+    footer {
+      background: var(--slate-deep); padding: 3rem 2rem; text-align: center;
+    }
+    .footer-brand {
+      font-family: 'Libre Baskerville', serif; font-weight: 700;
+      font-size: 1.05rem; color: var(--white); margin-bottom: 0.4rem;
+    }
+    .footer-brand span { color: var(--gold); font-weight: 400; }
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); line-height: 1.6; }
+    .footer-sra { margin-top: 1rem; font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 4rem 1.5rem 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">✨ Free demo site built for Hodkin & Co Solicitors — reply to our email to claim it</div>
+
+  <nav>
+    <a href="#" class="nav-brand">Hodkin <span>&</span> Co</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:01342325765" class="nav-cta">01342 325765</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-lines"></div>
+    <div class="hero-content">
+      <div class="hero-sra">SRA Regulated · Notary Public</div>
+      <h1>A friendly, trusted solicitor <em>in Felbridge.</em></h1>
+      <p class="hero-sub">Conveyancing, wills, family law, litigation, and notary services — with free parking and a straightforward, personal approach.</p>
+      <div class="hero-actions">
+        <a href="tel:01342325765" class="btn btn-gold">☎ Call: 01342 325765</a>
+        <a href="#services" class="btn btn-outline">Our Services →</a>
+      </div>
+      <div class="hero-trust">
+        <span>⚖️ SRA No. 77994</span>
+        <span>🅿️ Free Parking</span>
+        <span>⭐ 4.9 stars on Google</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">Our Services</p>
+        <h2 class="section-title">Expert legal advice, without the jargon.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-icon">🏠</div>
+          <h3>Conveyancing</h3>
+          <p>Buying, selling, or remortgaging? We handle the legal side of your property transaction from start to completion.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">📜</div>
+          <h3>Wills &amp; Probate</h3>
+          <p>Drafting wills, administering estates, and setting up powers of attorney to protect you and your family.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">👨‍👩‍👧</div>
+          <h3>Family Law</h3>
+          <p>Sensitive, practical advice on divorce, separation, children matters, and financial settlements.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">⚖️</div>
+          <h3>Litigation &amp; Disputes</h3>
+          <p>Civil litigation, neighbour disputes, commercial disagreements, and personal injury claims.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">🏢</div>
+          <h3>Commercial &amp; Company</h3>
+          <p>Company formation, partnership agreements, commercial contracts, employment matters, and IP protection.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">✒️</div>
+          <h3>Notary Public</h3>
+          <p>Authentication and certification of documents for use abroad. Regulated by the Faculty Office of the Archbishop of Canterbury.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">About Us</p>
+        <h2 class="section-title">Your local solicitor in Felbridge.</h2>
+      </div>
+      <p>Hodkin & Co is a friendly and successful firm of solicitors based in Felbridge, conveniently located between East Grinstead and Crawley with free parking for all clients.</p>
+      <p>We pride ourselves on providing clear, practical legal advice without unnecessary complexity. Whether you're buying your first home, planning for the future with a will, or dealing with a dispute, we're here to guide you through every step.</p>
+      <div class="about-features">
+        <div class="about-feature">
+          <h4>🅿️ Free Parking</h4>
+          <p>On-site parking for all clients at our Felbridge office.</p>
+        </div>
+        <div class="about-feature">
+          <h4>⚖️ SRA Regulated</h4>
+          <p>Authorised and regulated by the Solicitors Regulation Authority.</p>
+        </div>
+        <div class="about-feature">
+          <h4>✒️ Notary Public</h4>
+          <p>Regulated through the Faculty Office of the Archbishop of Canterbury.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">We're here to help.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-item">
+            <h3>📍 Address</h3>
+            <p>42-44 Copthorne Road<br>Felbridge<br>East Grinstead RH19 2NS</p>
+          </div>
+          <div class="contact-item">
+            <h3>📞 Phone</h3>
+            <a href="tel:01342325765">01342 325765</a>
+          </div>
+          <div class="contact-item">
+            <h3>✉️ Email</h3>
+            <a href="mailto:office@hodkin.org">office@hodkin.org</a>
+          </div>
+          <div class="contact-item">
+            <h3>⭐ Google Rating</h3>
+            <p>4.9 stars — 13 reviews</p>
+          </div>
+        </div>
+        <div class="contact-map">
+          <iframe src="https://www.google.com/maps?q=Hodkin+%26+Co+Solicitors,Copthorne+Rd,Felbridge,East+Grinstead+RH19+2NS&output=embed" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Hodkin <span>&</span> Co</div>
+    <p>Want this website live on your own domain? Reply to the email we sent you.</p>
+    <p class="footer-sra">Authorised and regulated by the Solicitors Regulation Authority · SRA No. 77994</p>
+  </footer>
+
+</body>
+</html>
